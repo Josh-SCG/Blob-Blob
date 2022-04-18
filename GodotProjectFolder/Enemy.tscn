@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://Assets/TileSheet - Copy.png" type="Texture" id=2]
+[ext_resource path="res://Assets/TileSheet.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "OnlyOne"
@@ -57,3 +57,9 @@ polygon = PoolVector2Array( -8, 8, 0, -8, 8, 8 )
 position = Vector2( 7, 0 )
 enabled = true
 cast_to = Vector2( 0, 9 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

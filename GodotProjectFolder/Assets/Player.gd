@@ -15,6 +15,8 @@ var facing_right = true
 var is_attacking = false
 var is_jumping = false
 
+var points = 0
+
 func _ready():
 	pass
 
