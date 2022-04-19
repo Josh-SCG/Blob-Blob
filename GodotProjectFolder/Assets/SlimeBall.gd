@@ -13,7 +13,7 @@ func setSlimeBallDirection(dir):
 func _physics_process(delta):
 	velocity.x = SPEED * delta * direction
 	translate(velocity)
-	$AnimatedSprite.play("Ball")
+	$AnimatedSprite.play("default")
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

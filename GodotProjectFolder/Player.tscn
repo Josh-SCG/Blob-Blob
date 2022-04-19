@@ -131,7 +131,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 7, 4 )
+extents = Vector2( 9, 2.5 )
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 1
@@ -148,11 +148,6 @@ frame = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.9, 0.9 )
 shape = SubResource( 13 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-zoom = Vector2( 0.7, 0.7 )
-smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
@@ -172,8 +167,23 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, -2 )
+position = Vector2( 0, -4 )
 shape = SubResource( 15 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 8 )
+collision_mask = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.6, 0.6 )
+limit_left = 1
+limit_top = 1
+limit_right = 2000
+limit_bottom = 200
+smoothing_enabled = true
+editor_draw_limits = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

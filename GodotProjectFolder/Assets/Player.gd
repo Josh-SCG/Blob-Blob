@@ -69,7 +69,8 @@ func movement():
 				is_jumping = true
 				motion.y = -JUMP_FORCE
 		if Input.is_action_pressed("drop"):
-			set_collision_mask_bit(1,false)
+			if $RayCast2D.is_colliding():
+				set_collision_mask_bit(1,false)
 		
 	if !is_on_floor():
 		if is_attacking == false:
