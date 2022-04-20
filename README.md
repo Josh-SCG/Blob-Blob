@@ -24,6 +24,8 @@ The currently planned MVP features include:
 
 
 # Credits
+Scripting, most visual art and overall design and development by [me](https://github.com/Josh-SCG)
+
 Parallax Background remixed from [A platformer in the forest by Buch](https://opengameart.org/content/a-platformer-in-the-forest)
 
 Title screen music from [Menu Music by mrpoly](https://opengameart.org/content/menu-music)
