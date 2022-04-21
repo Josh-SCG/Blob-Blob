@@ -15,11 +15,12 @@ The currently planned MVP features include:
   - [X] Jumping
 - [X] Interactions with Game Environment
   - [X] One-way platforms
-  - [X] A means of attack
+  - [X] A means of attack and getting damaged
 - [ ] Enemies
   - [X] Basic Movement
-  - [ ] AI to follow player
   - [X] Drop item(s) on death
+    - [X] Pick Up for level completion
+    - [ ] Health Pickup for player
 - [ ] At least 3-5 different stages/levels 
 
 
