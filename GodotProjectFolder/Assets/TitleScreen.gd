@@ -12,7 +12,7 @@ func _physics_process(delta):
 
 
 func _on_Start_pressed():
-	get_tree().change_scene("Test.tscn")
+	get_tree().change_scene("Tutorial.tscn")
 
 
 func _on_Exit_pressed():

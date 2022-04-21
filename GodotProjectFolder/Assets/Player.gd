@@ -10,20 +10,32 @@ const JUMP_FORCE = 300
 
 const SLIME_BALL = preload("res://SlimeBall.tscn")
 
+export (Vector2) var cameraZoom = Vector2(0.7,0.7)
 var motion = Vector2()
 var facing_right = true
 var is_attacking = false
 var is_jumping = false
+var is_dead = false
 
 var points = 0
 
 func _ready():
-	pass
+	self.get_node("Camera2D").zoom = cameraZoom
+
 
 #The frame-by-frame processes
 func _physics_process(delta):
-	movement()
-	shootSlimeBall()
+	if is_dead == false:
+		movement()
+		shootSlimeBall()
+		
+		if get_slide_count() > 0:
+			for i in range(get_slide_count()):
+				if "Enemy" in get_slide_collision(i).collider.name:
+					dead()
+	
+	
+	
 	
 #Function for playe rmovement
 func movement():
@@ -74,12 +86,13 @@ func movement():
 		
 	if !is_on_floor():
 		if is_attacking == false:
-			if motion.y < 0:
+			if motion.y < 0 :
 				$AnimationPlayer.play("Jump")
 			elif motion.y > 0:
 				$AnimationPlayer.play("Falling")
 	
 	motion = move_and_slide(motion,UP)
+
 
 func shootSlimeBall():
 	if Input.is_action_just_pressed("fire") && is_attacking == false:
@@ -87,15 +100,24 @@ func shootSlimeBall():
 			motion.x = 0
 		is_attacking = true
 		$AnimationPlayer.play("Attack")
-		var slimeBall = SLIME_BALL.instance()
+		motion = lerp(motion, Vector2.ZERO, 0.7)
+		var slime_ball = SLIME_BALL.instance()
 		
 		if sign($Position2D.position.x) == 1:
-			slimeBall.setSlimeBallDirection(1)
+			slime_ball.setSlimeBallDirection(1)
 		else:
-			slimeBall.setSlimeBallDirection(-1)
+			slime_ball.setSlimeBallDirection(-1)
 		
-		get_parent().add_child(slimeBall)
-		slimeBall.position = $Position2D.global_position
+		get_parent().add_child(slime_ball)
+		slime_ball.position = $Position2D.global_position
+
+
+func dead():
+	is_dead == true
+	motion = Vector2.ZERO
+	motion = Vector2(0,-300)
+	$CollisionShape2D.set_deferred("disabled", true)
+	$Timer.start()
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -105,3 +127,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 func _on_Area2D_body_exited(body):
 	set_collision_mask_bit(1, true)
 	#For drop down to work, player collision mask needs to be 1+2, platform layer+mask 2 and functions here
+
+
+func _on_Timer_timeout():
+	get_tree().reload_current_scene() # Replace with function body.
