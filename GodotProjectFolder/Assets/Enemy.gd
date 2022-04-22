@@ -24,7 +24,7 @@ func dead():
 		$CollisionPolygon2D.set_deferred("disabled", true)
 		$Timer.start()
 		if self.scale > Vector2(1,1):
-			get_parent().get_node("ScreenShake").screenShake(1,float(size.x+size.y)/2,100)
+			get_parent().get_parent().get_node("ScreenShake").screenShake(1,float(size.x+size.y)/2,100)
 
 func _physics_process(delta):
 	if is_dead == false:

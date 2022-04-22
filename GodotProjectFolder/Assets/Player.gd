@@ -11,6 +11,7 @@ const JUMP_FORCE = 300
 const SLIME_BALL = preload("res://SlimeBall.tscn")
 
 export (Vector2) var cameraZoom = Vector2(0.7,0.7)
+
 var motion = Vector2()
 var facing_right = true
 var is_attacking = false
@@ -118,7 +119,6 @@ func dead():
 	motion = Vector2(0,-300)
 	$CollisionShape2D.set_deferred("disabled", true)
 	$Timer.start()
-
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	is_attacking = false

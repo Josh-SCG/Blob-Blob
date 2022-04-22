@@ -179,7 +179,6 @@ flip_h = true
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Sprites"]
 position = Vector2( 104, 56 )
 frames = SubResource( 15 )
-frame = 5
 playing = true
 flip_h = true
 
