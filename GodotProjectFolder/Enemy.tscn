@@ -51,7 +51,7 @@ anims/OnlyOne = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -8, 8, 0, -8, 8, 8 )
+polygon = PoolVector2Array( -7, 8, 0, -6, 7, 8 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( 7, 0 )
