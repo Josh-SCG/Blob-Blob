@@ -144,7 +144,7 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 2
 collision_mask = 2
 format = 1
-tile_data = PoolIntArray( 196712, 0, 0, 196717, 1, 0, 196718, 1, 0, 262247, 2, 0, 327715, 1, 0, 327716, 1, 0, 327717, 1, 0, 327766, 0, 0, 327784, 0, 0, 393248, 0, 0, 393261, 0, 0, 393262, 1, 0, 393319, 2, 0, 458792, 0, 0, 458793, 1, 0, 458794, 1, 0, 458795, 2, 0, 458838, 0, 0, 458856, 0, 0, 524320, 0, 0, 524391, 2, 0, 589863, 0, 0, 589864, 1, 0, 589865, 1, 0, 589866, 1, 0, 589867, 1, 0, 589868, 2, 0, 589928, 0, 0, 655392, 0, 0, 655405, 0, 0, 655406, 1, 0, 655463, 2, 0, 721000, 0, 0 )
+tile_data = PoolIntArray( 196712, 0, 0, 196717, 1, 0, 196718, 1, 0, 262247, 2, 0, 327715, 1, 0, 327716, 1, 0, 327717, 1, 0, 327766, 0, 0, 327784, 0, 0, 327789, 2, 0, 327797, 1, 0, 327801, 1, 0, 393248, 0, 0, 393261, 0, 0, 393262, 1, 0, 393304, 2, 0, 393319, 2, 0, 458792, 0, 0, 458793, 1, 0, 458794, 1, 0, 458795, 2, 0, 458838, 0, 0, 458856, 0, 0, 458861, 2, 0, 524320, 0, 0, 524376, 2, 0, 524391, 2, 0, 589863, 0, 0, 589864, 1, 0, 589865, 1, 0, 589866, 1, 0, 589867, 1, 0, 589868, 2, 0, 589928, 0, 0, 589933, 2, 0, 655392, 0, 0, 655405, 0, 0, 655406, 1, 0, 655448, 2, 0, 655463, 2, 0, 721000, 0, 0, 721005, 2, 0 )
 
 [node name="ScreenShake" type="Node2D" parent="."]
 script = ExtResource( 4 )
@@ -243,9 +243,9 @@ autowrap = true
 
 [node name="EnemyVar" type="Label" parent="Control"]
 margin_left = 1064.0
-margin_top = 88.0
+margin_top = 96.0
 margin_right = 1280.0
-margin_bottom = 153.0
+margin_bottom = 161.0
 rect_pivot_offset = Vector2( 384, 64 )
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.0
@@ -253,7 +253,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.211765, 0, 0.364706, 1 )
 text = "These guys can have more health or be faster, so watch out!
-(These ones are also stuck for now)"
+"
 autowrap = true
 
 [node name="EndTut" type="Label" parent="Control"]
@@ -295,6 +295,7 @@ playing = true
 [node name="Sprite" type="AnimatedSprite" parent="Fakes"]
 position = Vector2( 704, 184 )
 frames = SubResource( 18 )
+frame = 3
 playing = true
 
 [connection signal="tween_completed" from="ScreenShake/Tween" to="ScreenShake" method="_on_Tween_tween_completed"]
