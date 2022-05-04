@@ -1,5 +1,6 @@
 # Blob-Blob
 Blob-Blob (the best name I could think of in 5min) is my first attempt at a Godot 2D Platformer.
+The game is playable in browser at the itch.io page available [here](https://josh-scg.itch.io/blob-blob).
 
 # Scope of the Game
 Blob-Blob will not be overly complex and will have the bog-standard elements of a platformer with additional features I see fit as I develop it.
