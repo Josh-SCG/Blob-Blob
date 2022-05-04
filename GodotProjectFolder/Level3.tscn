@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ChangeStage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Background.png" type="Texture" id=6]
 [ext_resource path="res://Platform.tres" type="TileSet" id=7]
 [ext_resource path="res://EndDoor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Lvl.wav" type="AudioStream" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -97,13 +98,13 @@ script = ExtResource( 5 )
 [node name="Enemy" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( 152, 168 )
 speed = 100
-health = 10
+health = 6
 size = Vector2( 4, 4 )
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( 872, 168 )
 speed = 100
-health = 10
+health = 6
 size = Vector2( 4, 4 )
 
 [node name="ChangeStage" parent="." instance=ExtResource( 1 )]
@@ -113,5 +114,11 @@ target_level = "res://TitleScreen.tscn"
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 80, 40 )
 cameraZoom = Vector2( 1, 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -15.0
+pitch_scale = 2.75
+autoplay = true
 
 [connection signal="tween_completed" from="ScreenShake/Tween" to="ScreenShake" method="_on_Tween_tween_completed"]
