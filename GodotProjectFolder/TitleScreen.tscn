@@ -159,33 +159,33 @@ tile_data = PoolIntArray( 0, 0, 2, 1, 0, 2, 2, 0, 2, 3, 0, 2, 4, 0, 0, 5, 0, 2, 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Sprites"]
 position = Vector2( 32, 136 )
 frames = SubResource( 8 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Sprites"]
 position = Vector2( 296, 104 )
 frames = SubResource( 8 )
-frame = 3
+frame = 4
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Sprites"]
 position = Vector2( 184, 168 )
 frames = SubResource( 8 )
-frame = 2
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Sprites"]
 position = Vector2( 104, 56 )
 frames = SubResource( 15 )
+frame = 2
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Sprites"]
 position = Vector2( 40, 40 )
 frames = SubResource( 18 )
-frame = 1
 playing = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -218,7 +218,7 @@ texture = ExtResource( 3 )
 margin_left = 28.0
 margin_top = 33.0
 margin_right = 107.0
-margin_bottom = 65.0
+margin_bottom = 47.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
@@ -229,6 +229,7 @@ texture_normal = ExtResource( 6 )
 texture_focused = ExtResource( 7 )
 
 [node name="Exit" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+visible = false
 margin_top = 18.0
 margin_right = 79.0
 margin_bottom = 32.0

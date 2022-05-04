@@ -109,7 +109,7 @@ size = Vector2( 4, 4 )
 
 [node name="ChangeStage" parent="." instance=ExtResource( 1 )]
 position = Vector2( 32, 32 )
-target_level = "res://TitleScreen.tscn"
+target_level = "res://End.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 80, 40 )
