@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Kenney Pixel Square.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/ScreenShake.gd" type="Script" id=4]
 [ext_resource path="res://Assets/TileSheet.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Background.png" type="Texture" id=6]
@@ -60,6 +61,38 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
+
+[sub_resource type="DynamicFont" id=19]
+size = 11
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 11
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 11
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 11
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 11
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 11
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 8
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 11
+font_data = ExtResource( 3 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 5 )
@@ -182,6 +215,7 @@ size_flags_stretch_ratio = 0.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.211765, 0, 0.364706, 1 )
+custom_fonts/font = SubResource( 19 )
 text = "W, Space or Up to Jump"
 autowrap = true
 
@@ -196,6 +230,7 @@ size_flags_stretch_ratio = 0.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.211765, 0, 0.364706, 1 )
+custom_fonts/font = SubResource( 20 )
 text = "A/D or Left Right to Move"
 autowrap = true
 
@@ -210,6 +245,7 @@ size_flags_stretch_ratio = 0.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.211765, 0, 0.364706, 1 )
+custom_fonts/font = SubResource( 21 )
 text = "Collect these from enemies to finish levels"
 autowrap = true
 
@@ -224,6 +260,7 @@ size_flags_stretch_ratio = 0.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.211765, 0, 0.364706, 1 )
+custom_fonts/font = SubResource( 22 )
 text = "Avoid enemies like this!"
 autowrap = true
 
@@ -238,13 +275,14 @@ size_flags_stretch_ratio = 0.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.211765, 0, 0.364706, 1 )
+custom_fonts/font = SubResource( 23 )
 text = "Hit 'em with a slime blob with E or R-Ctrl"
 autowrap = true
 
 [node name="EnemyVar" type="Label" parent="Control"]
 margin_left = 1064.0
 margin_top = 96.0
-margin_right = 1280.0
+margin_right = 1296.0
 margin_bottom = 161.0
 rect_pivot_offset = Vector2( 384, 64 )
 size_flags_vertical = 1
@@ -252,21 +290,23 @@ size_flags_stretch_ratio = 0.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.211765, 0, 0.364706, 1 )
+custom_fonts/font = SubResource( 24 )
 text = "These guys can have more health or be faster, so watch out!
 "
 autowrap = true
 
 [node name="EndTut" type="Label" parent="Control"]
-margin_left = 1416.0
-margin_top = 128.0
-margin_right = 1680.0
-margin_bottom = 176.0
+margin_left = 1432.0
+margin_top = 144.0
+margin_right = 1520.0
+margin_bottom = 192.0
 rect_pivot_offset = Vector2( 384, 64 )
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.211765, 0, 0.364706, 1 )
+custom_fonts/font = SubResource( 25 )
 text = "Tutorial's over!
 "
 autowrap = true
@@ -282,6 +322,7 @@ size_flags_stretch_ratio = 0.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.211765, 0, 0.364706, 1 )
+custom_fonts/font = SubResource( 26 )
 text = "Down or S to drop down"
 autowrap = true
 
@@ -290,12 +331,13 @@ autowrap = true
 [node name="FakePickUp" type="AnimatedSprite" parent="Fakes"]
 position = Vector2( 720, 32 )
 frames = SubResource( 11 )
+frame = 1
 playing = true
 
 [node name="Sprite" type="AnimatedSprite" parent="Fakes"]
 position = Vector2( 704, 184 )
 frames = SubResource( 18 )
-frame = 3
+frame = 5
 playing = true
 
 [connection signal="tween_completed" from="ScreenShake/Tween" to="ScreenShake" method="_on_Tween_tween_completed"]
